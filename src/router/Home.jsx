@@ -17,7 +17,6 @@ const Home = () => {
         }
       }
     } = await axios.get('https://yts.mx/api/v2/list_movies.json?sort_by=rating');
-    // console.log('movies : ', movies);
     setState({ movies, isLoading : false }); // movies : movies :: key, value 가 같으면 축약가능
   }
   useEffect(() => {
@@ -39,7 +38,6 @@ const Home = () => {
           <div className="movies">
             {
               movies.map(movie => {
-                console.log('movie : ', movie)
                 return <Movie 
                   key={movie.id}
                   id={movie.id} 
